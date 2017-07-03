@@ -44,4 +44,15 @@ if ( !captainName || !captainEmail || !deputyName || !deputyEmail || !teamName )
     comments: comments,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
   	 });
+  $("#teamName").val("");
+  $("#captainName").val("");
+  $("#captainEmail").val("");
+  $("#deputyName").val("");
+  $("#deputyEmail").val("");
+  $("#player3").val("");
+  $("#player4").val("");
+  $("#preferredTime").val("");
+  $("#comments").val("");
+
+
   });
