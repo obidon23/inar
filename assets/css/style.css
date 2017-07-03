@@ -1,0 +1,65 @@
+.navigation {
+	height: 60px;
+	padding-left: 100px;
+	background-color: #203746;
+	color: #708fa3;
+	vertical-align: middle;
+}
+
+.main-info {
+	background-color: #bacd66;
+	min-height: 100%;
+	padding: 20px 10px;
+}
+
+.main-info p {
+	color: #435200;
+	font-size: 20px;
+}
+#signup {
+	height: 500px;
+	overflow: auto;
+}
+li {
+	text-decoration: none;
+	display: inline-block;
+	font-family: 'helvetica', arial, sans-serif;
+	padding-top: 30px;
+	font-size: 20px;
+	color: #000;
+}
+li a {
+	color: #708fa3;
+	text-decoration: none;
+	padding: 0 10px;
+}
+li a:hover {
+	text-decoration: none;
+	color: #39bf39;
+}
+li a:visited{
+	text-decoration: none;
+}
+.rules {
+	background-color: #0b1f2d;
+	color: #999;
+	height: 100%;
+	padding: 50px;
+}
+
+.teams {
+	background-color: #89e189;
+	color: #003500;
+	height: 500px;
+	padding: 50px;
+}
+
+.results {
+	background-color: #bacd66;
+	color: #435200;
+	height: 500px;
+	padding: 50px;
+}
+.form-group {
+	margin: 0;
+}
