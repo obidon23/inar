@@ -63,3 +63,12 @@ li a:visited{
 .form-group {
 	margin: 0;
 }
+
+.firstRow {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.newRow {
+	font-style: italic;
+}

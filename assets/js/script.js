@@ -14,9 +14,33 @@ var database = firebase.database();
 
 // loading the teams
 
-function loadTeams() {
-	d
-}
+function setup() {
+database.ref('teams').orderByChild("name").limitToLast(100).on("child_added", function(childSnapshot) {
+    console.log("Child Added setup");
+    teamHeader = $("#teams").html(
+    	"<h2 class='h2 h2-default'>Registered Teams</h2>" +
+	    "<div class='col-lg-2 firstRow'>Team Name</div>" + 
+	    "<div class='col-lg-2 firstRow'>Captain</div>" + 
+	    "<div class='col-lg-2 firstRow'>Deputy</div>" + 
+	    "<div class='col-lg-2 firstRow'>Player 3</div>" + 
+	    "<div class='col-lg-2 firstRow'>Player 4</div>" +
+	    "<div class='col-lg-2 firstRow'>Preferred Start Time</div>"
+	    )
+
+
+  teamList = $("#teams").append(
+    "<div class='col-lg-2 newRow'>" + childSnapshot.val().teamName + 
+    "</div> <div class='col-lg-2 newRow'>" + childSnapshot.val().captain + 
+    "</div><div class='col-lg-2 newRow'>"+ childSnapshot.val().deputy + 
+    "</div><div class='col-lg-2 newRow'>" + childSnapshot.val().player3 +
+    "</div><div class='col-lg-2 newRow'>" + childSnapshot.val().player4 +
+    "</div><div class='col-lg-2 newRow'>" + childSnapshot.val().time +
+    "</div>");
+  
+    $("#teams").append(teamList);
+  })
+};
+
 // Adding new teams to the database
 $(document).on("click", "#submit", function(event) {
 	event.preventDefault();
@@ -54,5 +78,6 @@ if ( !captainName || !captainEmail || !deputyName || !deputyEmail || !teamName )
   $("#preferredTime").val("");
   $("#comments").val("");
 
-
   });
+
+setup();
