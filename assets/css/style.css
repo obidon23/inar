@@ -1,9 +1,29 @@
+html {
+    min-height: 100%;
+    display: block;
+    position: relative;
+}
+
 .navigation {
 	height: 60px;
 	padding-left: 100px;
 	background-color: #203746;
 	color: #708fa3;
 	vertical-align: middle;
+/*	position: fixed;
+*/}
+
+.navbar {
+	margin: 0;
+	padding: -5px 0 0 100px;
+	border-radius: 0;
+}
+
+.menu {
+	height: 60px;
+	background-color: #203746;
+	padding: 10px 0 10px 10px;
+	color: #708fa3;
 }
 
 .main-info {
@@ -16,15 +36,25 @@
 	color: #435200;
 	font-size: 20px;
 }
+
+.main-info h5 {
+	text-align: center;
+}
+
 #signup {
-	height: 190%;
+	height: 100%;
 	overflow: auto;
+}
+
+.h4 {
+	margin-top: 50px;
+	text-align: center;
 }
 li {
 	text-decoration: none;
 	display: inline-block;
 	font-family: 'helvetica', arial, sans-serif;
-	padding-top: 30px;
+	padding-top: 5px;
 	font-size: 20px;
 	color: #000;
 }
@@ -40,18 +70,23 @@ li a:hover {
 li a:visited{
 	text-decoration: none;
 }
+
+li h5 {
+	color: #fff;
+	padding: 0;
+}
 .rules {
 	background-color: #0b1f2d;
 	color: #999;
 	height: 100%;
-	padding: 50px;
+	padding: 60px;
 }
 
 .teams {
 	background-color: #89e189;
 	color: #003500;
 	height: 500px;
-	padding: 50px;
+	padding: 60px;
 }
 
 .results {
@@ -59,6 +94,7 @@ li a:visited{
 	color: #435200;
 	height: 500px;
 	padding: 50px;
+	
 }
 .form-group {
 	margin: 0;
@@ -71,4 +107,15 @@ li a:visited{
 
 .newRow {
 	font-style: italic;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+	text-align: center;
+	background-color: #3a3a3a;
+	color: #fff;
+	width: 100%;
+  height: 60px;
+  padding: 20px;
 }
