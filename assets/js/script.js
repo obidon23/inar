@@ -15,19 +15,18 @@ var database = firebase.database();
 // loading the teams
 
 function setup() {
+teamHeader = $("#teams").html(
+      "<h2 class='h2 h2-default'>Registered Teams</h2>" +
+      "<div class='col-lg-2 firstRow'>Team Name</div>" + 
+      "<div class='col-lg-2 firstRow'>Captain</div>" + 
+      "<div class='col-lg-2 firstRow'>Deputy</div>" + 
+      "<div class='col-lg-2 firstRow'>Player 3</div>" + 
+      "<div class='col-lg-2 firstRow'>Player 4</div>" +
+      "<div class='col-lg-2 firstRow'>Preferred Start Time</div>"
+      )
 database.ref('teams').orderByChild("name").limitToLast(100).on("child_added", function(childSnapshot) {
     console.log("Child Added setup");
-    teamHeader = $("#teams").html(
-    	"<h2 class='h2 h2-default'>Registered Teams</h2>" +
-	    "<div class='col-lg-2 firstRow'>Team Name</div>" + 
-	    "<div class='col-lg-2 firstRow'>Captain</div>" + 
-	    "<div class='col-lg-2 firstRow'>Deputy</div>" + 
-	    "<div class='col-lg-2 firstRow'>Player 3</div>" + 
-	    "<div class='col-lg-2 firstRow'>Player 4</div>" +
-	    "<div class='col-lg-2 firstRow'>Preferred Start Time</div>"
-	    )
-
-
+    
   teamList = $("#teams").append(
     "<div class='col-lg-2 newRow'>" + childSnapshot.val().teamName + 
     "</div> <div class='col-lg-2 newRow'>" + childSnapshot.val().captain + 
