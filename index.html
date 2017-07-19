@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -21,8 +22,6 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -53,7 +52,7 @@
 							You’ve never experienced Las Vegas like this. Get ready for a trivia event that mixes the best of both trivia worlds with puzzling and the power of observation. From the Peloponnesian War to Pizza the Hut, we have you covered. Join a medal-winning quest that combines a wide set of trivia knowledge with a sense of fun and adventure.
 						</p> 
 						<p>
-							Welcome to the “Incredible Not-A-Race”, where time is limited but speed is not required. This two-hour circuit will showcase Vegas from new point of view with the unique charm that only vegas can offer. Teams of up to 4 will need to work together to crack codes while maximizing player strengths in tests of trivia and teamwork. 
+							Welcome to the “Incredible Not-A-Race”, where time is limited but speed is not required. This two-hour circuit will showcase Vegas from new point of view with the unique charm that only Sin City can offer. Teams of up to 4 will need to work together to crack codes while maximizing player strengths in tests of trivia and teamwork. 
 						</p>
 						<p>
 							Sign up today  and get ready to walk, not run...
@@ -64,33 +63,33 @@
 
 			</div>
 			<div class="col-lg-4 signup" id="signup">
-				<form>
+				<form name="signup" onsubmit="return validateForm()">
 					<div class="form-group row">
 					  <label for="example-text-input" class="col-2 col-form-label"></label>
 						<div class="col-10">
-						  <input class="form-control" type="text" value="" id="teamName" placeholder="Team Name">
+						  <input class="form-control" type="text" value="" id="teamName" placeholder="Team Name*">
   						</div>
 					</div>
 					<div class="form-group row">
 						<label for="example-text-input" class="col-2 col-form-label"></label>
 					  	<div class="col-10">
-						    <input class="form-control" type="text" value="" id="captainName" placeholder="Captain Name">
+						    <input class="form-control" type="text" value="" id="captainName" placeholder="Captain Name*">
   						</div>
 					</div>
 					<div class="form-group">
 					    <label for="exampleInputEmail1"></label>
-						    <input type="email" class="form-control" id="captainEmail" aria-describedby="emailHelp" placeholder="Captain email">
+						    <input type="email" class="form-control" id="captainEmail" aria-describedby="emailHelp" placeholder="Captain email*">
 <!-- 						    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 					</div>
   					<div class="form-group row">
 					  	<label for="example-text-input" class="col-2 col-form-label"></label>
 					  	<div class="col-10">
-					   	<input class="form-control" type="text" value="" id="deputyName" placeholder="Deputy Name">
+					   	<input class="form-control" type="text" value="" id="deputyName" placeholder="Deputy Name*">
   						</div>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputEmail1"></label>
-						<input type="email" class="form-control" id="deputyEmail" aria-describedby="emailHelp" placeholder="Deputy email">
+						<input type="email" class="form-control" id="deputyEmail" aria-describedby="emailHelp" placeholder="Deputy email*">
 						
 					</div>
 					<div class="form-group row">
@@ -129,8 +128,22 @@
 	   				<div class="form-group row">
 						<label for="example-text-input" class="col-2 col-form-label"></label>
 					</div>
-					<button type="submit" class="btn btn-info btn-block" id="submit">Submit
+					<button type="submit" class="btn btn-info btn-block" id="submit" data-toggle="modal" data-target="#MyModal">Submit
 					</button>
+
+					<div id="MyModal" class="modal fade modal-sm" role="dialog">
+					  <div class="modal-content">
+					    <div class="modal-header">
+					      
+    					</div>
+						<div class="modal-body">
+					      
+					    </div>
+					    <div class="modal-footer">
+       					<button type="button" class="close" data-dismiss="modal">&times;</button>
+    					</div>
+  						</div>
+					</div>
 				</form>
 			</div>
 		</div>

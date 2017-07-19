@@ -10,12 +10,29 @@
   firebase.initializeApp(config);
 
 var database = firebase.database();
+  var teamName = $("#teamName").val().trim();
+  var captainName = $("#captainName").val().trim();
+  var captainEmail = $("#captainEmail").val().trim();
+  var deputyName = $("#deputyName").val().trim();
+  var deputyEmail = $("#deputyEmail").val().trim();
+  var player3 = $("#player3").val().trim();
+  var player4 = $("#player4").val().trim();
+  var preferredTime = $("#preferredTime").val().trim();
+  var comments = $("#comments").val().trim();
 
+// var myModal = $(".mocal-content").html("<div class="modal-header"></div><div class="modal-body"></div><div class="modal-footer"><button type="button" class="close" data-dismiss="modal">&times;</button></div>")<div class="modal-header">  
+//               </div>
+//             <div class="modal-body">
+                
+//               </div>
+//               <div class="modal-footer">
+//                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+//               </div>
 
 // loading the teams
 
 function setup() {
-teamHeader = $("#teams").html(
+var teamHeader = $("#teams").html(
       "<h2 class='h2 h2-default'>Registered Teams</h2>" +
       "<div class='col-lg-2 firstRow'>Team Name</div>" + 
       "<div class='col-lg-2 firstRow'>Captain</div>" + 
@@ -23,7 +40,7 @@ teamHeader = $("#teams").html(
       "<div class='col-lg-2 firstRow'>Player 3</div>" + 
       "<div class='col-lg-2 firstRow'>Player 4</div>" +
       "<div class='col-lg-2 firstRow'>Preferred Start Time</div>"
-      )
+      );
 database.ref('teams').orderByChild("name").limitToLast(100).on("child_added", function(childSnapshot) {
     console.log("Child Added setup");
     
@@ -37,24 +54,26 @@ database.ref('teams').orderByChild("name").limitToLast(100).on("child_added", fu
     "</div>");
   
     $("#teams").append(teamList);
-  })
-};
+  });
+}
 
-// Adding new teams to the database
+// Validating teh form
 $(document).on("click", "#submit", function(event) {
-	event.preventDefault();
-	var teamName = $("#teamName").val().trim();
-	var captainName = $("#captainName").val().trim();
-	var captainEmail = $("#captainEmail").val().trim();
-	var deputyName = $("#deputyName").val().trim();
-	var deputyEmail = $("#deputyEmail").val().trim();
-	var player3 = $("#player3").val().trim();
-	var player4 = $("#player4").val().trim();
-	var preferredTime = $("#preferredTime").val().trim();
-	var comments = $("#comments").val().trim();
+  event.preventDefault();
+   validateForm();
+});
+// This function will update the firebase
+function pushForm() { 
+  teamName = $("#teamName").val().trim();
+  captainName = $("#captainName").val().trim();
+  captainEmail = $("#captainEmail").val().trim();
+  deputyName = $("#deputyName").val().trim();
+  deputyEmail = $("#deputyEmail").val().trim();
+  player3 = $("#player3").val().trim();
+  player4 = $("#player4").val().trim();
+  preferredTime = $("#preferredTime").val().trim();
+  comments = $("#comments").val().trim();
 
-if ( !captainName || !captainEmail || !deputyName || !deputyEmail || !teamName ) return;
- 
   database.ref('teams').push({
     teamName: teamName,
     captain: captainName,
@@ -66,7 +85,7 @@ if ( !captainName || !captainEmail || !deputyName || !deputyEmail || !teamName )
     time: preferredTime,
     comments: comments,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
-  	 });
+     });
   $("#teamName").val("");
   $("#captainName").val("");
   $("#captainEmail").val("");
@@ -76,7 +95,25 @@ if ( !captainName || !captainEmail || !deputyName || !deputyEmail || !teamName )
   $("#player4").val("");
   $("#preferredTime").val("");
   $("#comments").val("");
+ 
+  $(".modal-header").html("<h3>Thanks for signing up!</h3>");
+  $(".modal-body").html("<p>You are registered for the Incredible Not-A-Race. Your team name and members can still be modified between now and August 4th. You will receive an email with more information in the next 24 hours.</p>");
 
-  });
+  };
+function validateForm() {
+  teamName = $("#teamName").val().trim();
+  captainName = $("#captainName").val().trim();
+  captainEmail = $("#captainEmail").val().trim();
+  deputyName = $("#deputyName").val().trim();
+  deputyEmail = $("#deputyEmail").val().trim();
+  if ( captainName && captainEmail && deputyName && deputyEmail && teamName) {
+      pushForm();
+ 
+}
+  else {
+    $(".modal-header").html("<h3>Oops! Something went horribly wrong!</h3>");
+    $(".modal-body").html("<p>Please fill out all  of the required fields (*).</p>");
+    return;   }
 
+}
 setup();

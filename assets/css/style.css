@@ -19,6 +19,15 @@ html {
 	border-radius: 0;
 }
 
+.btn-info {
+	background-color: #203746;
+	border: none;
+}
+
+.btn-info:hover {
+	background-color: #203746;
+	color: #bacd66;
+}
 .menu {
 	height: 60px;
 	background-color: #203746;
@@ -75,6 +84,22 @@ li h5 {
 	color: #fff;
 	padding: 0;
 }
+
+.modal-sm {
+	width: 350px;
+	float: right;
+}
+
+.modal-content {
+	background-color: #708fcc;
+	color: #203746;
+	padding: 10px;
+}
+
+.modal-header {
+	text-align: center;
+}
+
 .rules {
 	background-color: #0b1f2d;
 	color: #999;
