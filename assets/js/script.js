@@ -34,23 +34,23 @@ var database = firebase.database();
 function setup() {
 var teamHeader = $("#teams").html(
       "<h2 class='h2 h2-default'>Registered Teams</h2>" +
-      "<div class='col-lg-2 firstRow'>Team Name</div>" + 
+      "<div class='col-lg-3 firstRow'>Team Name</div>" + 
       "<div class='col-lg-2 firstRow'>Captain</div>" + 
       "<div class='col-lg-2 firstRow'>Deputy</div>" + 
       "<div class='col-lg-2 firstRow'>Player 3</div>" + 
       "<div class='col-lg-2 firstRow'>Player 4</div>" +
-      "<div class='col-lg-2 firstRow'>Preferred Start Time</div>"
+      "<div class='col-lg-1 firstRow squeeze'>Pref. Start</div>"
       );
 database.ref('teams').orderByChild("name").limitToLast(100).on("child_added", function(childSnapshot) {
     console.log("Child Added setup");
     
   teamList = $("#teams").append(
-    "<div class='col-lg-2 newRow'>" + childSnapshot.val().teamName + 
+    "<div class='col-lg-3 newRow'>" + childSnapshot.val().teamName.slice(0,30) + 
     "</div> <div class='col-lg-2 newRow'>" + childSnapshot.val().captain + 
     "</div><div class='col-lg-2 newRow'>"+ childSnapshot.val().deputy + 
     "</div><div class='col-lg-2 newRow'>" + childSnapshot.val().player3 +
     "</div><div class='col-lg-2 newRow'>" + childSnapshot.val().player4 +
-    "</div><div class='col-lg-2 newRow'>" + childSnapshot.val().time +
+    "</div><div class='col-lg-1 newRow'>" + childSnapshot.val().time +
     "</div>");
   
     $("#teams").append(teamList);
@@ -117,3 +117,29 @@ function validateForm() {
 
 }
 setup();
+
+
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+    console.log(this.hash);
+    debugger;
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+      console.log(hash);
+      debugger;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });

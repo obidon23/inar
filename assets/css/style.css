@@ -10,13 +10,16 @@ html {
 	background-color: #203746;
 	color: #708fa3;
 	vertical-align: middle;
-/*	position: fixed;
-*/}
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+}
 
 .navbar {
 	margin: 0;
 	padding: -5px 0 0 100px;
 	border-radius: 0;
+
 }
 
 .btn-info {
@@ -33,12 +36,13 @@ html {
 	background-color: #203746;
 	padding: 10px 0 10px 10px;
 	color: #708fa3;
+
 }
 
 .main-info {
 	background-color: #bacd66;
 	min-height: 100%;
-	padding: 20px 10px;
+	padding: 80px 10px;
 }
 
 .main-info p {
@@ -59,6 +63,7 @@ html {
 	margin-top: 50px;
 	text-align: center;
 }
+
 li {
 	text-decoration: none;
 	display: inline-block;
@@ -103,23 +108,42 @@ li h5 {
 .rules {
 	background-color: #0b1f2d;
 	color: #999;
-	height: 100%;
 	padding: 60px;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left:0;
+	padding-top: 60px;
+	min-height: 100%;
 }
 
 .teams {
 	background-color: #89e189;
 	color: #003500;
-	height: 500px;
 	padding: 60px;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left:0;
+	padding-top: 60px;
+	min-height: 100%;
+
 }
 
 .results {
 	background-color: #bacd66;
 	color: #435200;
-	height: 500px;
-	padding: 50px;
-	
+	padding: 60px;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left:0;
+	padding-top: 60px;
+	min-height: 100%;
+
 }
 .form-group {
 	margin: 0;
@@ -132,6 +156,10 @@ li h5 {
 
 .newRow {
 	font-style: italic;
+
+}
+.squeeze {
+	font-size: 10px;
 }
 
 #footer {
