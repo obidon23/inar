@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 
@@ -31,12 +32,12 @@
 <body>
 	<div class="container-fluid">
 		<div class="row navigation">
-			<div class="col-lg-7 nav navbar">
+			<div class="col-lg-7 col-xs-7 nav navbar">
 				<h1>
-					The Incredible Not-A-Race
+					<a href="https://obidon23.github.io/inar/">The Incredible Not-A-Race</a>
 				</h1>
 			</div>
-			<div class="col-lg-5 menu">
+			<div class="col-lg-5 col-xs-5 menu">
 				
 				<ul>
 					<li><a href="#teams">Teams</a></li>
@@ -58,9 +59,12 @@
 							Sign up today  and get ready to walk, not run...
 						</p>
 
-						<h4 class="h4 h4-default">August 4th | 10pm - 1am (flexible starts and finishes) | Mostly Indoors
+						<h4 class="h4 h4-default">August 4th | 10:30pm - 1:30am (flexible starts and finishes) | Mostly Indoors
 						</h4>
 
+						<h3>
+							Don't have a team? Sign up anyway and we'll help you join up with others. Just fill out the required fields twice with your contact info.
+						</h3>
 			</div>
 			<div class="col-lg-4 signup" id="signup">
 				<form name="signup" onsubmit="return validateForm()">
@@ -81,6 +85,11 @@
 						    <input type="email" class="form-control" id="captainEmail" aria-describedby="emailHelp" placeholder="Captain email*">
 <!-- 						    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 					</div>
+					<div class="form-group">
+					    <label for="exampleInputPhone1"></label>
+						    <input type="phone" class="form-control" id="captainPhone" aria-describedby="phoneHelp" placeholder="Captain Phone*">
+<!-- 						    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+					</div>					
   					<div class="form-group row">
 					  	<label for="example-text-input" class="col-2 col-form-label"></label>
 					  	<div class="col-10">
@@ -90,6 +99,12 @@
 					<div class="form-group">
 						<label for="exampleInputEmail1"></label>
 						<input type="email" class="form-control" id="deputyEmail" aria-describedby="emailHelp" placeholder="Deputy email*">
+
+					<div class="form-group">
+					    <label for="exampleInputPhone1"></label>
+						    <input type="phone" class="form-control" id="deputyPhone" aria-describedby="phoneHelp" placeholder="Deputy Phone">
+<!-- 						    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+					</div>					
 						
 					</div>
 					<div class="form-group row">
@@ -108,9 +123,6 @@
 					    <label for="exampleSelect1"></label>
 					    <select class="form-control" id="preferredTime">
 					      <option value="">Preferred Starting Time</option>
-					      <option value="10:00 pm">10:00 pm</option>
-					      <option  value="10:10 pm">10:10 pm</option>
-					      <option  value="10:20 pm">10:20 pm</option>
 					      <option  value="10:30 pm">10:30 pm</option>
 					      <option  value="10:40 pm">10:40 pm</option>
 					      <option  value="10:50 pm">10:50 pm</option>
@@ -118,6 +130,9 @@
 					      <option  value="11:10 pm">11:10 pm</option>
 					      <option  value="11:20 pm">11:20 pm</option>
 					      <option  value="11:30 pm">11:30 pm</option>
+   					      <option value="11:40 pm">11:40 pm</option>
+					      <option  value="11:50 pm">11:50 pm</option>
+					      <option  value="12:00 am">12:00 am</option>
 
 					    </select>
 					</div>
@@ -149,16 +164,16 @@
 		</div>
 	<a name="rules"></a>
 	<div class="row rules work" name="rules">
-		<div class="col-lg-3">
+		<div class="col-lg-3 col-xs-12">
 		<h2 class="h2 h2-default">
 			Rules
 		</h2>
 
 		<img src="assets/images/vegas.gif" width="100%" min-height="100%">
 		</div>
-		<div class="col-lg-8">
+		<div class="col-lg-8 col-xs-12">
 			<p>
-				The NOT-A-RACE is an activity where groups travel within a defined area of the southern portion of the Las Vegas Strip for the purpose of competition in trivia challenges, and to accomplish other tasks and observations.   NOT-A-RACE will take place beginning after 10pm Friday, August 4th until the wee hours on Saturday, August 5th, 2017 beginning at a location near the Trivia Championships of North America “TCONA” activities at the Tropicana Hotel, Resort and Casino. Teams will start the course at specific assigned times and have sufficient time to navigate among the challenges by walking or provided transit prior to 1am.  There are no specific time limits between activities other than the entire duration of the contest and no difference in scoring based upon faster or slower completion.   Participants are encouraged to walk at a normal pace and not to run, jump, climb, or otherwise exert themselves, and to limit their time outdoors.
+				The NOT-A-RACE is an activity where groups travel within a defined area of the southern portion of the Las Vegas Strip for the purpose of competition in trivia challenges, and to accomplish other tasks and observations. NOT-A-RACE will take place beginning after 10pm Friday, August 4th until the wee hours on Saturday, August 5th, 2017 beginning at a location near the Trivia Championships of North America “TCONA” activities at the Tropicana Hotel, Resort and Casino. Teams will start the course at specific assigned times and have sufficient time to navigate among the challenges by walking or provided transit prior to 1am.There are no specific time limits between activities other than the entire duration of the contest and no difference in scoring based upon faster or slower completion. Participants are encouraged to walk at a normal pace and not to run, jump, climb, or otherwise exert themselves, and to limit their time outdoors.
 			</p>
 			<p>
 				TEAMS ARE LIMITED TO MAXIMUM FOUR MEMBERS.  TEAMS OF FOUR WILL TAKE PRIORITY OVER TEAMS OF SMALLER NUMBERS.  IF THERE ARE MORE TEAMS THAT SIGN UP THAN SLOTS AVAILABLE, TEAMS WILL BE SELECTED BY LOTTERY.  The team will designate a captain and a second in command, one of which must be present at any given checkpoint.  Teams may have members join their group in progress should they be involved in other activities at TCONA, and likewise have team members who depart for other activities as needed.
@@ -166,20 +181,20 @@
 			<ul>
 				<li><h5>WHAT IS IT? IMAGINE "AMAZING RACE" FOR LAZY PEOPLE, BUT WITH TRIVIA! NO RUNNING! NO SWEATING!
 				 </h5></li>
-				<li><h5>SOLVE CLUES TO FIND EACH CHECKPOINT WHERE YOU WILL ANSWER TRIVIA QUESTIONS AND SCORE POINTS.
+				<li><h5>SOLVE CLUES TO FIND EACH TRIVIA CHECKPOINT WHERE CAN SCORE POINTS.
  				</h5></li>
 				<li><h5>GAME COURSE IS MOSTLY INDOORS AND TAKES LESS THAN TWO HOURS AT AN EASY WALKING PACE.
  				</h5></li>
 				<li><h5>TEAMS OF FOUR PLAYERS: ONE CAPTAIN, ONE DEPUTY, AND UP TO TWO MORE PLAYERS.
  				</h5></li>
-				<li><h5>STAGGERED START TIMES BEGIN AT 10 P.M. FRIDAY. 
+				<li><h5>STAGGERED START TIMES BEGIN AT 10:30 P.M. FRIDAY. 
  				</h5></li>
 			</ul>
 		</div>
 	</div>
 	<a name="teams"></a>
 	<div class="row teams work" name="teams">
-		<div class="col-lg-12" id="teams">
+		<div class="col-lg-12 col-xs-12" id="teams">
 			<h2 class="h2 h2-default">
 				Meet the Teams
 			</h2>
@@ -187,14 +202,14 @@
 	</div>
 	<a name="results"></a>
 	<div class="row results work" name="results">
-		<div class="col-lg-12">
+		<div class="col-lg-12 col-xs-12">
 			<h2 class="h2 h2-default">
 				Race Results
 			</h2>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-12 footer">
+		<div class="col-lg-12 col-xs-12 footer">
 			<p>
 				&copy; 2017 Incredible Not-a-Race
 			</p>
