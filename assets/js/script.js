@@ -67,8 +67,10 @@ function pushForm() {
   teamName = $("#teamName").val().trim();
   captainName = $("#captainName").val().trim();
   captainEmail = $("#captainEmail").val().trim();
+  captainPhone - $("#captainPhone").val().trim();
   deputyName = $("#deputyName").val().trim();
   deputyEmail = $("#deputyEmail").val().trim();
+  deputyPhone = $("#deputyPhone").val().trim();
   player3 = $("#player3").val().trim();
   player4 = $("#player4").val().trim();
   preferredTime = $("#preferredTime").val().trim();
@@ -117,7 +119,36 @@ function validateForm() {
     return;   }
 
 }
+
+function results() {
+var teamHeader = $("#results").html(
+      "<div class='col-lg-1 firstRow'>Team #</div>" + 
+      "<div class='col-lg-4 firstRow'>Team Name</div>" + 
+      "<div class='col-lg-2 firstRow'>Captain</div>" + 
+      "<div class='col-lg-2 firstRow'>Start Time</div>" + 
+      "<div class='col-lg-2 firstRow'>Shuttle Time</div>" +
+      "<div class='col-lg-1 firstRow squeeze'>Score</div>"
+      );
+database.ref('teams').orderByChild("name").limitToLast(100).on("child_added", function(childSnapshot) {
+    console.log("Child Added setup");
+    
+  teamList = $("#results").append(
+    "<div class='col-lg-1 newRow'>" + childSnapshot.val().teamNum + 
+    "</div> <div class='col-lg-4 newRow'>" + childSnapshot.val().teamName + 
+    "</div><div class='col-lg-2 newRow'>" + childSnapshot.val().captain +
+    "</div><div class='col-lg-2 newRow'>"+ childSnapshot.val().startTime + 
+    "</div><div class='col-lg-2 newRow'>" + childSnapshot.val().shuttle +
+    "</div><div class='col-lg-1 newRow'>" + childSnapshot.val().score +
+    "</div>");
+  
+    $("#results").append(teamList);
+  });
+}
+
+
+//actionS
 setup();
+results();
 
 
   // Add smooth scrolling to all links
